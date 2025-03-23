@@ -28,3 +28,4 @@ A fully functional real-time chat application built using **Django**, **Django C
 
 ## 📂 **Project Structure**
 
+/ChatApp ├── /chat │ ├── /templates/chat │ │ ├── chat.html │ │ └── home.html │ ├── init.py │ ├── consumers.py │ ├── models.py │ ├── routing.py │ └── views.py ├── /ChatApp │ ├── init.py │ ├── asgi.py │ ├── settings.py │ ├── urls.py │ └── wsgi.py ├── /static │ └── css │ └── style.css └── manage.py
