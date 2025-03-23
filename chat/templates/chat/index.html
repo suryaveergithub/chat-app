@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Chat App</title>
+    <style>
+        body {
+            background-color: #e3f2fd;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #1976d2;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, select, button {
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #1976d2;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Enter Your Details</h2>
+    <form id="chat-form">
+        <input type="text" id="username" placeholder="Enter your name" required>
+        <input type="text" id="room_name" placeholder="Enter room name" required>
+        <select id="role" required>
+            <option value="sender">Join as Sender</option>
+            <option value="receiver">Join as Receiver</option>
+        </select>
+        <button type="button" onclick="joinChat()">Join Chat</button>
+    </form>
+</div>
+
+<script>
+    function joinChat() {
+        const username = document.getElementById("username").value;
+        const roomName = document.getElementById("room_name").value;
+        const role = document.getElementById("role").value;
+
+        if (username && roomName) {
+            const url = `/${role}/${roomName}/${username}/`;
+            window.location.href = url;
+        } else {
+            alert("Please enter all the required details!");
+        }
+    }
+</script>
+
+</body>
+</html>
